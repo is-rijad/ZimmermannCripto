@@ -10,7 +10,7 @@
                 Mode = FileMode.Open
             };
 
-            using (var sr = new StreamReader("CodeBook.csv", fileStreamOption)) {
+            using (var sr = new StreamReader("..//..//..//CodeBook.csv", fileStreamOption)) {
                 matrica[0] = new char[6];
                 matrica[1] = new char[6];
                 matrica[2] = new char[6];
