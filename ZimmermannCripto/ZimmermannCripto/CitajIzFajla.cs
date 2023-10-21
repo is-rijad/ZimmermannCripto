@@ -1,8 +1,8 @@
 ﻿namespace ZimmermannCripto {
     public class CitajIzFajla {
         public static char[][] Citaj() {
-            char[][] matrica = new char[6][];
             int _velicina = 6;
+            char[][] matrica = new char[_velicina][];
 
             var fileStreamOption = new FileStreamOptions()
             {
@@ -11,12 +11,10 @@
             };
 
             using (var sr = new StreamReader("..//..//..//CodeBook.csv", fileStreamOption)) {
-                matrica[0] = new char[6];
-                matrica[1] = new char[6];
-                matrica[2] = new char[6];
-                matrica[3] = new char[6];
-                matrica[4] = new char[6];
-                matrica[5] = new char[6];
+                for (int i = 0; i < _velicina; i++)
+                {
+                    matrica[i] = new char[_velicina];
+                }
 
 
                 while (sr.Peek() > -1) {

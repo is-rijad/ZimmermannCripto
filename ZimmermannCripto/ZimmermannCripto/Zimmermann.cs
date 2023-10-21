@@ -1,8 +1,8 @@
 namespace ZimmermannCripto {
     public partial class Frm_Zimmermann : Form {
         private readonly char[][] _codeBook;
-        private readonly char[] _charovi = new char[6];
         private const int _velicina = 6;
+        private readonly char[] _charovi = new char[_velicina];
         private bool _enkripcija;
 
         public Frm_Zimmermann() {
