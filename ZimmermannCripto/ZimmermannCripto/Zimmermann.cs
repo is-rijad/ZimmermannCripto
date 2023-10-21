@@ -53,15 +53,22 @@ namespace ZimmermannCripto {
             unos = unos.ToUpper();
             unos = unos.Replace(" ", "");
             string rezultat = string.Empty;
+            bool pronadjen;
 
             for (int i = 0; i < unos.Length; i++) {
+                pronadjen = false;
                 for (int j = 0; j < _velicina; j++) {
                     for (int k = 0; k < _velicina; k++) {
                         if (unos[i] == _codeBook[j][k]) {
                             rezultat += _charovi[j];
                             rezultat += _charovi[k];
+                            pronadjen = true;
                         }
+                        if (pronadjen)
+                            break;
                     }
+                    if (pronadjen)
+                        break;
                 }
             }
             return rezultat;
@@ -71,6 +78,9 @@ namespace ZimmermannCripto {
             string rezultat = string.Empty;
             int charIndex0;
             int charIndex1;
+            bool pronadjen0;
+            bool pronadjen;
+
 
             unos = unos.ToUpper();
 
@@ -79,12 +89,25 @@ namespace ZimmermannCripto {
                 charIndex1 = 0;
 
                 for (int j = 0; j < _velicina; j++) {
-                    if (unos[i] == _charovi[j]) 
+                    pronadjen = false;
+
+                    if (unos[i] == _charovi[j])
+                    {
                         charIndex0 = j;
+                        pronadjen = true;
+                    }
+                    if (pronadjen)
+                        break;
                 }
                 for (int j = 0; j < _velicina; j++) {
-                    if (unos[i + 1] == _charovi[j])
+                    pronadjen = false;
+
+                    if (unos[i + 1] == _charovi[j]) {
                         charIndex1 = j;
+                        pronadjen = true;
+                    }
+                    if (pronadjen)
+                        break;
                 }
                 rezultat += _codeBook[charIndex0][charIndex1];
             }
